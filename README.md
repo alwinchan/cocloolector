@@ -1,0 +1,2 @@
+# cocloolector
+CoC Loot Collector
