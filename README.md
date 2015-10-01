@@ -10,10 +10,10 @@ _Notes: Tested running one instance of cocloolector that discovered and collecti
 You can install cocloolector via the command-line with either `curl` or `wget`.
 
 #### via curl
-`bash -c "$(curl -fsSL https://raw.githubusercontent.com/alwinchan/cocloolector/master/install.sh)"`
+`sh -c "$(curl -fsSL https://raw.githubusercontent.com/alwinchan/cocloolector/master/install.sh)"`
 
 #### via wget
-`bash -c "$(wget https://raw.githubusercontent.com/alwinchan/cocloolector/master/install.sh -O -)"`
+`sh -c "$(wget https://raw.githubusercontent.com/alwinchan/cocloolector/master/install.sh -O -)"`
 
 ### How to start?
 ```
