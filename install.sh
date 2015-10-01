@@ -26,7 +26,7 @@ else
   NORMAL=""
 fi
 
-if [[ "which brew" = *not found* ]]; then
+if [ ! -n "$(which brew)" ]; then
 	echo
 	read -n 1 -p "${RED} You must have ${GREEN}brew${RED} installed first. Install now? [y/n]" yes
 	echo
@@ -37,41 +37,44 @@ if [[ "which brew" = *not found* ]]; then
 	fi
 fi
 
-if [[ "which brew" = *not found* ]]; then
+echo
+echo "${YELLOW}Checking dependancies...${NORMAL}"
+
+if [ ! -n "$(which python)" ]; then
 	brew install python
 else
 	python -V
 fi
 
-if [[ "pkg-config --modversion opencv" = *not found* ]]; then
+if [ ! -n "$(pkg-config --modversion opencv)" ]; then
 	brew tap homebrew/science
 	brew install opencv
-	echo "OpenCV for Python: " -n
+	echo -n "OpenCV for Python: "
 	pkg-config --modversion opencv
 fi
 
-if [[ "pip -V" = *not found* ]]; then
+if [ ! -n "$(pip -V)" ]; then
 	brew install pip
 else
 	pip -V
 fi
 
 
-if [[ "node -v" = *not found* ]]; then
+if [ ! -n "$(node -v)" ]; then
 	brew install node
 else
-	echo "node " -n
+	echo -n "node "
 	node -v
 fi
 
-if [[ "appium -v" = *not found* ]]; then
+if [ ! -n "$(appium -v)" ]; then
 	npm install -g appium
 else
-	echo "appium " -n
+	echo -n "appium "
 	appium -v
 fi
 
-if [[ "which wd" = *not found* ]]; then
+if [ ! -n "$(which wd)" ]; then
 	npm install -g wd
 fi
 
@@ -81,3 +84,10 @@ pip install numpy
 pip install Appium-Python-Client
 
 git clone https://github.com/alwinchan/cocloolector.git
+
+echo
+echo "${GREEN}Successfully install into ${BOLD}cocloolector${NORMAL}"
+echo
+echo "${YELLOW}Now run:"
+echo "${YELLOW}cd cocloolector && python autoDiscover.py"
+echo

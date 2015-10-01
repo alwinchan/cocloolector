@@ -10,15 +10,20 @@ _Notes: Tested running one instance of cocloolector that discovered and collecti
 You can install cocloolector via the command-line with either `curl` or `wget`.
 
 #### via curl
-`sh -c "$(curl -fsSL https://raw.githubusercontent.com/alwinchan/cocloolector/master/install.sh)"`
+`bash -c "$(curl -fsSL https://raw.githubusercontent.com/alwinchan/cocloolector/master/install.sh)"`
 
 #### via wget
-`sh -c "$(wget https://raw.githubusercontent.com/alwinchan/cocloolector/master/install.sh -O -)"`
+`bash -c "$(wget https://raw.githubusercontent.com/alwinchan/cocloolector/master/install.sh -O -)"`
 
 ### How to start?
 ```
 cd cocloolector
 python autoDiscover.py
+```
+
+### How to stop?
+```
+killall node
 ```
 
 ### Limitations
