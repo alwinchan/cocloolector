@@ -86,9 +86,13 @@ class ComplexAndroidTests(unittest.TestCase):
             file_name = 'downloads/screenshot.%s.png' % port
             self.driver.save_screenshot(directory + file_name)
 
-            im1 = Image.open(file_name)
-            im2 = im1.rotate(90)
-            im2.save(file_name)
+            resolution = cv2.imread(file_name, 0)
+            w, h = resolution.shape[::-1]
+
+            if w == 720 and h == 1280
+                im1 = Image.open(file_name)
+                im2 = im1.rotate(90)
+                im2.save(file_name)
 
             sleep(2)
 
