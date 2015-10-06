@@ -121,7 +121,7 @@ def actionTapXY(self, pointX, pointY):
     sleep(1)
     return
 
-def ifTextWaitThenTap(text, wait, button):
+def ifTextWaitThenTap(self, text, wait, button):
     print "[%s] Check if screen has text: %s" % (port, text)
     if has_text(text):
         sleep(wait)
@@ -170,11 +170,11 @@ class ComplexAndroidTests(unittest.TestCase):
         while True:
             take_screenshot(self)
 
-            ifTextWaitThenTap('Another device is connecting to this village', (60*10), 'res/btn_reload.png')
+            ifTextWaitThenTap(self, 'Another device is connecting to this village', (60*10), 'res/btn_reload.png')
 
-            ifTextWaitThenTap('You have been playing for too long', (60*5), 'res/btn_reload.png')
+            ifTextWaitThenTap(self, 'You have been playing for too long', (60*5), 'res/btn_reload.png')
 
-            ifTextWaitThenTap('Unable to connect with the server', 60, 'res/btn_try-again.png')
+            ifTextWaitThenTap(self, 'Unable to connect with the server', 60, 'res/btn_try-again.png')
 
             wasAttacked = get_position(['Checking if village was attacked?', 'was attacked'], 'res/village-was-attacked.png')
 
@@ -239,7 +239,7 @@ class ComplexAndroidTests(unittest.TestCase):
                                 count += 1
 
                         take_screenshot(self)
-                        
+
                         closeDonateBox = get_position(['Close the donate box', 'Close Donate Box'], 'res/btn_close.png')
                         if len(closeDonateBox) > 0:
                             actionTap(self, closeDonateBox)
