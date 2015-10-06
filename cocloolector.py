@@ -176,12 +176,13 @@ class ComplexAndroidTests(unittest.TestCase):
 
             ifTextWaitThenTap(self, 'Unable to connect with the server', 60, 'res/btn_try-again.png')
 
-            wasAttacked = get_position(['Checking if village was attacked?', 'was attacked'], 'res/village-was-attacked.png')
+            if vars().has_key('wasAttacked') is False:
+                wasAttacked = get_position(['Checking if village was attacked?', 'was attacked'], 'res/village-was-attacked.png')
 
-            if len(wasAttacked) > 0:
-                okay = get_position(['Okay to proceed', 'okay'], 'res/btn_okay.png')
-                if len(okay) > 0:
-                    actionTap(self, okay, skipScreenshot)
+                if len(wasAttacked) > 0:
+                    okay = get_position(['Okay to proceed', 'okay'], 'res/btn_okay.png')
+                    if len(okay) > 0:
+                        actionTap(self, okay, skipScreenshot)
 
             # zoom out
             print "\r[%s] Zooming out" % port
