@@ -25,8 +25,8 @@ def main():
 	while True:
 		p = subprocess.Popen('bin/adb devices', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
-		appiumPort=4723
-		appiumBPort=2251
+		appiumPort=4923
+		appiumBPort=2451
 		num=0
 		for line in p.stdout.readlines():
 			if "device\n" in line:
