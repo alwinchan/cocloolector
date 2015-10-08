@@ -34,21 +34,27 @@ It has only been tested on device and simulator with 1280x720 as resolution, run
 * Auto Upgrade Building, Troops, Spells
 
 ## Dependencies
+```
 brew install python
 brew tap homebrew/science
 brew install opencv
 brew install pip
 brew install node
 brew install tesseract
+```
 ##### nodejs
+```
 npm install -g appium
 npm install -g wd
+```
 #####  python
+```
 pip install Pillow
 pip install matplotlib
 pip install numpy
 pip install Appium-Python-Client
 pip install pytesseract
+```
 
 ## License
 cocloolector is released under the [Apache License 2.0](https://github.com/alwinchan/cocloolector/blob/master/LICENSE).
